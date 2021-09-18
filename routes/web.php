@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\CourseController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,3 +19,6 @@ Route::get('/', function () {
 Route::get('/profile', function () {
     return view('about');
 });
+Route::get('/courses',[CourseController::class,'all' ]);
+Route::get('/create-course',[CourseController::class,'create' ]);
+Route::post('/store-course',[CourseController::class,'store' ]);
